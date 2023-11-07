@@ -8,7 +8,6 @@ export default (async () => {
     const Markdown = (await import('vite-plugin-md')).default
 
     return defineConfig({
-        base: 'https://fattynomnom.github.io/',
         plugins: [vue({ include: [/\.vue$/, /\.md$/] }), svgLoader(), Markdown()],
         resolve: {
             alias: {
