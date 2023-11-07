@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 100;
+    src: url('../assets/fonts/Inter/static/Inter-Thin.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 200;
+    src: url('../assets/fonts/Inter/static/Inter-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 300;
+    src: url('../assets/fonts/Inter/static/Inter-ExtraLight.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 400;
+    src: url('../assets/fonts/Inter/static/Inter-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 500;
+    src: url('../assets/fonts/Inter/static/Inter-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 600;
+    src: url('../assets/fonts/Inter/static/Inter-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 700;
+    src: url('../assets/fonts/Inter/static/Inter-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 800;
+    src: url('../assets/fonts/Inter/static/Inter-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 900;
+    src: url('../assets/fonts/Inter/static/Inter-Black.ttf');
+}
+
+html,
+body,
+div#app {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    @apply text-gray-500;
+}
+
+h1 {
+    @apply font-semibold text-2xl pb-5;
+}
+
+h2 {
+    @apply font-semibold text-xl;
+}
+
+h5 {
+    @apply font-semibold;
+}
+
+small {
+    @apply text-sm font-semibold;
+}
+
+a {
+    @apply text-indigo-500;
+}
+
+.markdown-body {
+    @apply space-y-5;
+}
+
+.markdown-body li {
+    @apply list-disc ml-5;
+}
+
+.markdown-body code {
+    @apply bg-gray-200 px-1 rounded;
+}
+
+.markdown-body img {
+    @apply rounded-lg;
+}
