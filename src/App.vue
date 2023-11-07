@@ -1,9 +1,9 @@
 <template>
-    <div class="flex h-full">
-        <div class="flex-1 overflow-hidden">
+    <div class="flex flex-col-reverse lg:flex-row h-full overflow-y-auto">
+        <div class="flex-1 lg:overflow-y-hidden">
             <RouterView />
         </div>
-        <nav class="bg-gray-100 p-20 w-2/6 h-full flex flex-col justify-center space-y-5">
+        <nav class="bg-gray-100 p-10 md:px-28 md:py-20 lg:p-20 w-full lg:w-2/6 h-fit lg:h-full flex flex-col justify-center space-y-5 items-center lg:items-start">
             <img
                 alt="Profile picture"
                 class="rounded-full object-cover h-[100px] w-[100px]"
@@ -11,7 +11,7 @@
                 width="100"
                 height="100"
             />
-            <div>
+            <div class="text-center lg:text-left">
                 <h5>Hi, I'm Madeleine!</h5>
                 <p>
                     I'm a part time software engineer and full time cat person who likes problem

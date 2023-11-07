@@ -1,5 +1,5 @@
 <template>
-    <main class="divide-y px-28 py-36 h-full overflow-y-auto">
+    <main class="divide-y p-10 md:px-28 lg:py-36 h-full lg:overflow-y-auto">
         <section>
             <h1>Hey there!</h1>
             <p>
@@ -34,8 +34,8 @@
         </section>
         <section>
             <h1>What I'm learning</h1>
-            <div class="space-y-5 p-10 rounded-lg bg-gray-50 overflow-hidden">
-                <div class="flex items-center justify-between cursor-pointer" @click="displayed = !displayed">
+            <div class="space-y-5 p-5 md:p-10 rounded-lg bg-gray-50 overflow-hidden">
+                <div class="flex items-center justify-between cursor-pointer space-x-5" @click="displayed = !displayed">
                     <div>
                         <p class="text-sm text-gray-400">{{ frontmatter.date }}</p>
                         <h2>{{ frontmatter.title }}</h2>
@@ -61,11 +61,11 @@ const displayed = ref(false)
 
 <style lang="pcss" scoped>
 section {
-    @apply pb-20 space-y-5;
+    @apply pb-10 lg:pb-20 space-y-5;
 }
 
 section:not(:first-child) {
-    @apply pt-20;
+    @apply pt-10 lg:pt-20;
 }
 
 .v-enter-active,
