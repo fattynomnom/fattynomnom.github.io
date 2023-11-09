@@ -23,7 +23,7 @@ From past experience, I've used Hasura for creating GraphQL APIs.
 -   If I were to host my database and APIs on Hasura, whoever wants to try out my project would also need to host their own database and APIs on Hasura as well, would be easier if APIs and database can run locally.
 -   Expanding on allowing users to run project locally, I am aware when using Hasura's UI, our actions (eg. running SQL queries, creating tables) can be "recorded" into code, which can be backed up to another repo to allow replication. However, I find this entire structure very messy, managing our own migration files and code is easier. I could be wrong about this and just don't know how to manage this well enough.
 
-Overall, I decided to forgo using a platform like Hasura. Plus could be a chance to test out my rusty SQL query skills.
+Overall, I decided to forgo using a platform like Hasura. Plus, it could be a chance to test out my rusty SQL query skills.
 
 First, I setup my ExpressJs app with Apollo so that I can start writing GraphQL APIs. I followed [this tutorial](https://blog.logrocket.com/build-graphql-app-node-js-typescript-graphql-request/).
 
@@ -31,7 +31,7 @@ Then I setup a PostgreSQL database using [these guidelines](https://gist.github.
 
 After the database setup, I followed [this tutorial](https://medium.com/@yasirahboyce/node-express-knex-postgresql-22e10daf0817) to setup Knex.
 
-If you don't know what Knex is, essentially it is query builder for many SQL databases, including PostgreSQL. Tbh, very reminiscent of Laravel days. [Here is the Knex documentation](https://knexjs.org/) if you're curious.
+If you don't know what Knex is, essentially it is a query builder for many SQL databases, including PostgreSQL. Tbh, very reminiscent of Laravel days. [Here is the Knex documentation](https://knexjs.org/) if you're curious.
 
 After setting up Knex, I replaced the static datasets with PostgreSQL queries, run `npm run dev` and tested my APIs on [Apollo's GraphQL sandbox](https://studio.apollographql.com/sandbox/explorer):
 

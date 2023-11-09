@@ -34,16 +34,16 @@
         </section>
         <section>
             <h1>What I'm learning</h1>
-            <div class="space-y-5 p-5 md:p-10 rounded-lg bg-gray-50 overflow-hidden">
-                <div class="flex items-center justify-between cursor-pointer space-x-5" @click="displayed = !displayed">
+            <div v-for="post in posts" :key="post.frontmatter.title" class="space-y-5 p-5 md:p-10 rounded-lg bg-gray-50 overflow-hidden">
+                <div class="flex items-center justify-between cursor-pointer space-x-5" @click="post.displayed = !post.displayed">
                     <div>
-                        <p class="text-sm text-gray-400">{{ frontmatter.date }}</p>
-                        <h2>{{ frontmatter.title }}</h2>
+                        <p class="text-sm text-gray-400">{{ post.frontmatter.date }}</p>
+                        <h2>{{ post.frontmatter.title }}</h2>
                     </div>
                     <ChevronDownIcon class="w-5 h-5 text-gray-500" :class="{'rotate-180': displayed}" />
                 </div>
                 <Transition>
-                    <PostOne v-if="displayed" />
+                    <component v-if="post.displayed" :is="post.component" />
                 </Transition>
             </div>
         </section>
@@ -53,10 +53,24 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import PostOne from '@/docs/7th_nov_23.md'
-import ChevronDownIcon from '@/assets/icons/chevron-down.svg?component'
-import { frontmatter } from '@/docs/7th_nov_23.md'
+import PostTwo from '@/docs/8th_nov_23.md'
 
-const displayed = ref(false)
+import ChevronDownIcon from '@/assets/icons/chevron-down.svg?component'
+import { frontmatter as postOneFrontmatter } from '@/docs/7th_nov_23.md'
+import { frontmatter as postTwoFrontmatter } from '@/docs/8th_nov_23.md'
+
+const posts = ref([
+    {
+        frontmatter: postTwoFrontmatter,
+        component: PostTwo,
+        displayed: false
+    },
+    {
+        frontmatter: postOneFrontmatter,
+        component: PostOne,
+        displayed: false
+    }
+])
 </script>
 
 <style lang="pcss" scoped>
