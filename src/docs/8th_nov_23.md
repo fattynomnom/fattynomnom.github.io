@@ -46,5 +46,7 @@ Knex('users').insert(user, '*')
 
 Much easier to read and I don't have to worry about SQL syntax! Knex's query builder also looks a lot like Laravel's query builder... But its been awhile since Laravel for me, so I don't remember these things off the top of my head anymore.
 
+View the changes I've made in this repo: [itrack-expressjs](https://github.com/fattynomnom/itrack-expressjs).
+
 **Next thing I'll be working on:**
 Integrating Auth0 with Express

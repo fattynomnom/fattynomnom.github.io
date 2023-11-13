@@ -40,7 +40,7 @@
                         <p class="text-sm text-gray-400">{{ post.frontmatter.date }}</p>
                         <h2>{{ post.frontmatter.title }}</h2>
                     </div>
-                    <ChevronDownIcon class="w-5 h-5 text-gray-500" :class="{'rotate-180': displayed}" />
+                    <ChevronDownIcon class="w-5 h-5 text-gray-500" :class="{'rotate-180': post.displayed}" />
                 </div>
                 <Transition>
                     <component v-if="post.displayed" :is="post.component" />
@@ -54,12 +54,19 @@
 import { ref } from 'vue'
 import PostOne from '@/docs/7th_nov_23.md'
 import PostTwo from '@/docs/8th_nov_23.md'
+import PostThree from '@/docs/13th_nov_23.md'
 
 import ChevronDownIcon from '@/assets/icons/chevron-down.svg?component'
 import { frontmatter as postOneFrontmatter } from '@/docs/7th_nov_23.md'
 import { frontmatter as postTwoFrontmatter } from '@/docs/8th_nov_23.md'
+import { frontmatter as postThreeFrontmatter } from '@/docs/13th_nov_23.md'
 
 const posts = ref([
+    {
+        frontmatter: postThreeFrontmatter,
+        component: PostThree,
+        displayed: false
+    },
     {
         frontmatter: postTwoFrontmatter,
         component: PostTwo,
