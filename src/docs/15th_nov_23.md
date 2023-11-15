@@ -29,7 +29,9 @@ AUTH0_CLIENT_ID=
 AUTH0_CLIENT_SECRET=
 ```
 
-The package will automatically find these variables in your `.env` file, you don't have to actually import them anywhere unless you want to explicitly do so and customize your config. So make sure NOT to prepend `NEXT_PUBLIC_` to the env.
+You can find these values in your Auth0 application dashboard.
+
+The package will automatically detect these variables in your `.env` file, you don't have to actually import them anywhere unless you want to explicitly do so and customize your config. So make sure NOT to prepend `NEXT_PUBLIC_` to the env.
 
 # Setup Auth0 APIs
 
@@ -59,7 +61,7 @@ Now when the user clicks on "Login", they would see something like this:
 
 ![Auth0 login page](./images/15th_nov_23_2.png)
 
-This makes my `/login` and `/register` pages redundant now... If I'm not mistaken, you can still use custom login and registration pages, but maybe this is something we can explore a bit later, for now I just want to setup the authentication flow.
+This makes my `/login` and `/register` pages redundant now... If I'm not mistaken, you can still use custom login and registration pages, but maybe this is something I can explore a bit later, for now I just want to setup the authentication flow.
 
 # Redirect user after login
 
