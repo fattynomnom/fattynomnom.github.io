@@ -55,13 +55,20 @@ import { ref } from 'vue'
 import PostOne from '@/docs/7th_nov_23.md'
 import PostTwo from '@/docs/8th_nov_23.md'
 import PostThree from '@/docs/13th_nov_23.md'
+import PostFour from '@/docs/15th_nov_23.md'
 
 import ChevronDownIcon from '@/assets/icons/chevron-down.svg?component'
 import { frontmatter as postOneFrontmatter } from '@/docs/7th_nov_23.md'
 import { frontmatter as postTwoFrontmatter } from '@/docs/8th_nov_23.md'
 import { frontmatter as postThreeFrontmatter } from '@/docs/13th_nov_23.md'
+import { frontmatter as postFourFrontmatter } from '@/docs/15th_nov_23.md'
 
 const posts = ref([
+    {
+        frontmatter: postFourFrontmatter,
+        component: PostFour,
+        displayed: false
+    },
     {
         frontmatter: postThreeFrontmatter,
         component: PostThree,

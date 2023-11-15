@@ -105,5 +105,9 @@ a {
 }
 
 .markdown-body img {
-    @apply rounded-lg;
+    @apply rounded-lg mx-auto;
+}
+
+.markdown-body h1 {
+    @apply font-semibold text-base pb-0;
 }
