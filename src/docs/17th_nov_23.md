@@ -1,6 +1,6 @@
 ---
 title: Adding user email to Auth0 token claims
-date: 16/11/23
+date: 17/11/23
 ---
 
 So I managed to find [this documentation](https://auth0.com/docs/get-started/architecture-scenarios/spa-api/api-implementation-nodejs#4-determine-the-user-identity) on how to add the user's details to your token's claims.

@@ -58,6 +58,7 @@ import PostThree from '@/docs/13th_nov_23.md'
 import PostFour from '@/docs/15th_nov_23.md'
 import PostFive from '@/docs/16th_nov_23.md'
 import PostSix from '@/docs/17th_nov_23.md'
+import PostSeven from '@/docs/19th_nov_23.md'
 
 import ChevronDownIcon from '@/assets/icons/chevron-down.svg?component'
 import { frontmatter as postOneFrontmatter } from '@/docs/7th_nov_23.md'
@@ -66,8 +67,14 @@ import { frontmatter as postThreeFrontmatter } from '@/docs/13th_nov_23.md'
 import { frontmatter as postFourFrontmatter } from '@/docs/15th_nov_23.md'
 import { frontmatter as postFiveFrontmatter } from '@/docs/16th_nov_23.md'
 import { frontmatter as postSixFrontmatter } from '@/docs/17th_nov_23.md'
+import { frontmatter as postSevenFrontmatter } from '@/docs/19th_nov_23.md'
 
 const posts = ref([
+    {
+        frontmatter: postSevenFrontmatter,
+        component: PostSeven,
+        displayed: false
+    },
     {
         frontmatter: postSixFrontmatter,
         component: PostSix,
