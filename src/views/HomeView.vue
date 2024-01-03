@@ -15,12 +15,12 @@
             <p>
                 I'm a huge advocate for Typescript, object-oriented programming and clean coding
                 practices (DRY, SOLID). I know writing it is a pain, but reading clean code is
-                <i>*chefs kiss*</i>. Do I sit back sometimes and admire clean code structures? Yes, yes
-                I do.
+                <i>*chefs kiss*</i>. Do I sit back sometimes and admire clean code structures? Yes,
+                yes I do.
             </p>
             <p>
-                My hobbies are gardening, reading mangas, watching movies and starting 1001 coding projects that I don't
-                finish.
+                My hobbies are gardening, reading mangas, watching movies and starting 1001 coding
+                projects that I don't finish.
             </p>
             <p>
                 I'm trying to hold myself accountable by creating this site to document my learning
@@ -34,13 +34,23 @@
         </section>
         <section>
             <h1>What I'm learning</h1>
-            <div v-for="post in posts" :key="post.frontmatter.title" class="space-y-5 p-5 md:p-10 rounded-lg bg-gray-50 overflow-hidden">
-                <div class="flex items-center justify-between cursor-pointer space-x-5" @click="post.displayed = !post.displayed">
+            <div
+                v-for="post in posts"
+                :key="post.frontmatter.title"
+                class="space-y-5 p-5 md:p-10 rounded-lg bg-gray-50 overflow-hidden"
+            >
+                <div
+                    class="flex items-center justify-between cursor-pointer space-x-5"
+                    @click="post.displayed = !post.displayed"
+                >
                     <div>
                         <p class="text-sm text-gray-400">{{ post.frontmatter.date }}</p>
                         <h2>{{ post.frontmatter.title }}</h2>
                     </div>
-                    <ChevronDownIcon class="w-5 h-5 text-gray-500" :class="{'rotate-180': post.displayed}" />
+                    <ChevronDownIcon
+                        class="w-5 h-5 text-gray-500"
+                        :class="{ 'rotate-180': post.displayed }"
+                    />
                 </div>
                 <Transition>
                     <component v-if="post.displayed" :is="post.component" />
@@ -59,6 +69,7 @@ import PostFour from '@/docs/15th_nov_23.md'
 import PostFive from '@/docs/16th_nov_23.md'
 import PostSix from '@/docs/17th_nov_23.md'
 import PostSeven from '@/docs/19th_nov_23.md'
+import PostEight from '@/docs/3rd_jan_24.md'
 
 import ChevronDownIcon from '@/assets/icons/chevron-down.svg?component'
 import { frontmatter as postOneFrontmatter } from '@/docs/7th_nov_23.md'
@@ -68,8 +79,14 @@ import { frontmatter as postFourFrontmatter } from '@/docs/15th_nov_23.md'
 import { frontmatter as postFiveFrontmatter } from '@/docs/16th_nov_23.md'
 import { frontmatter as postSixFrontmatter } from '@/docs/17th_nov_23.md'
 import { frontmatter as postSevenFrontmatter } from '@/docs/19th_nov_23.md'
+import { frontmatter as postEightFrontmatter } from '@/docs/3rd_jan_24.md'
 
 const posts = ref([
+    {
+        frontmatter: postEightFrontmatter,
+        component: PostEight,
+        displayed: false
+    },
     {
         frontmatter: postSevenFrontmatter,
         component: PostSeven,
@@ -119,13 +136,13 @@ section:not(:first-child) {
 
 .v-enter-active,
 .v-leave-active {
-  transition: max-height 1.5s ease;
-  max-height: 1500px;
+    transition: max-height 1.5s ease;
+    max-height: 1500px;
 }
 
 .v-enter-from,
 .v-leave-to {
-  max-height: 0;
-  overflow: hidden;
+    max-height: 0;
+    overflow: hidden;
 }
 </style>

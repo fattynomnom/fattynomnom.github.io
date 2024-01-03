@@ -19,7 +19,7 @@ exports.onExecutePostUserRegistration = async (event) => {
 
 And it worked... for users who _actually_ went through the registration flow with an email and password. If the user "registers" using their Google account, technically, they would not go through this registration flow (after much manual testing). I wished the docs would've been clearer about this.
 
-So instead, I'm going to follow [this suggestion](https://community.auth0.com/t/problems-with-post-user-registration-action/101314) to use the Post Login flow instead of the Post Registration flow, by checking the number of logins when user logins. If the number of logins is 1, I will assume that the user has just registered and add their email to my db.
+So instead, I'm going to follow [this suggestion](https://community.auth0.com/t/problems-with-post-user-registration-action/101314) to use the **Post Login flow** instead of the Post Registration flow, by checking the number of logins when user logins. If the number of logins is 1, I will assume that the user has just registered and add their email to my db.
 
 First, go to "Flows" on the Auth0 dashboard, then select the "Login" flow. Then on the right hand side, create an action for the flow like so:
 
