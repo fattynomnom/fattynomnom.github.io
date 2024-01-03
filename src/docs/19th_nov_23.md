@@ -124,7 +124,7 @@ exports.onExecutePostLogin = async (event, api) => {
 
 For the client ID and secret, on the Auth0 dashboard, navigate to "Applications". You should see two applications, one an SPA application and another a Machine to Machine application. Get your credentials from the **Machine to Machine** application.
 
-Make sure you have also created an API with the audience `http://localhost:4000/graphql`. I talked about creating an API in my post "Protecting GraphQL API routes with Auth0".
+Make sure you have also created an API with the audience `http://localhost:4000/graphql`. I talked about creating an API in my post [Protecting GraphQL API routes with Auth0](#protecting-graphql-api-routes-with-auth0).
 
 And now we should be able to get the token! We can now attach the token to the header by using `response.data.access_token`.
 

@@ -36,6 +36,7 @@
             <h1>What I'm learning</h1>
             <div
                 v-for="post in posts"
+                ref="postRefs"
                 :key="post.frontmatter.title"
                 class="space-y-5 p-5 md:p-10 rounded-lg bg-gray-50 overflow-hidden"
             >
@@ -61,7 +62,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+
 import PostOne from '@/docs/7th_nov_23.md'
 import PostTwo from '@/docs/8th_nov_23.md'
 import PostThree from '@/docs/13th_nov_23.md'
@@ -123,6 +126,42 @@ const posts = ref([
         displayed: false
     }
 ])
+
+// #region navigation
+const postRefs = ref<HTMLDivElement[]>([])
+const currentPostIndex = ref(-1)
+const route = useRoute()
+
+watch(
+    () => route.hash,
+    value => {
+        const title = value.replace('#', '')
+        if (title) {
+            const index = posts.value.findIndex(
+                ({ frontmatter }) =>
+                    frontmatter.title
+                        ?.toLowerCase()
+                        .replace(/ /g, '-')
+                        .replace(/[^\w-]+/g, '') === title
+            )
+            if (index >= 0) {
+                posts.value.forEach(post => (post.displayed = false))
+                posts.value[index].displayed = true
+                currentPostIndex.value = index
+            }
+        }
+    },
+    { immediate: true }
+)
+watch(
+    () => [postRefs.value.length, currentPostIndex],
+    () => {
+        if (currentPostIndex.value >= 0) {
+            postRefs.value[currentPostIndex.value]?.scrollIntoView()
+        }
+    }
+)
+// #endregion
 </script>
 
 <style lang="pcss" scoped>
