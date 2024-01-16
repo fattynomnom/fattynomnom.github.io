@@ -25,6 +25,7 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ```sh
 npm install
+npm run generate-posts
 ```
 
 ### Compile and Hot-Reload for Development
@@ -48,6 +49,7 @@ npm run lint
 ### To deploy to GitHub Pages
 
 ```sh
+npm run generate-posts
 npm run build
 git subtree push --prefix dist origin gh-pages
 ```

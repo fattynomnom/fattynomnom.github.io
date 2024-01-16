@@ -10,7 +10,8 @@
         "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
         "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
         "format": "prettier --write src/",
-        "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
+        "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
+        "generate-posts": "node scripts/ExtractFrontmatter.ts"
     },
     "dependencies": {
         "vue": "^3.3.4",
@@ -27,6 +28,7 @@
         "autoprefixer": "^10.4.16",
         "eslint": "^8.49.0",
         "eslint-plugin-vue": "^9.17.0",
+        "front-matter": "^4.0.2",
         "npm-run-all2": "^6.1.1",
         "postcss": "^8.4.31",
         "prettier": "^3.0.3",
