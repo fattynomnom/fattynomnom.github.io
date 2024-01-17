@@ -25,5 +25,11 @@ const allAttrs = fs
         }
     })
     .filter(attr => !!attr)
+    .sort((a, b) => {
+        const [aDay, aMonth, aYear] = a.date.split('/')
+        const [bDay, bMonth, bYear] = b.date.split('/')
+
+        return new Date(bYear, bMonth, bDay).getTime() - new Date(aYear, aMonth, aDay).getTime()
+    })
 
 fs.writeFileSync('./src/docs/generated.json', JSON.stringify(allAttrs))
