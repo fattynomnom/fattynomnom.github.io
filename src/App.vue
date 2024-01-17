@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col-reverse lg:flex-row h-full overflow-y-auto">
         <div class="flex-1 lg:overflow-y-hidden">
-            <main class="divide-y p-10 md:px-28 lg:py-36 h-full lg:overflow-y-auto">
+            <main class="divide-y py-10 px-5 md:px-28 lg:py-36 h-full lg:overflow-y-auto">
                 <IntroSection />
                 <section v-if="route.meta.isPost">
                     <h1>What I'm learning</h1>
