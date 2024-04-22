@@ -1,4 +1,4 @@
-import{d as t,c as s,o,f as r}from"./index-401d1458.js";const n={class:"markdown-body"},a=r(`<p>So this was my initial “pattern” (or non-pattern really):</p><pre><code class="">| src
+import{d as t,c as s,o,f as r}from"./index-273a13f6.js";const n={class:"markdown-body"},a=r(`<p>So this was my initial “pattern” (or non-pattern really):</p><pre><code class="">| src
     - Resolvers.ts
     - TypeDefs.ts
     - index.ts
