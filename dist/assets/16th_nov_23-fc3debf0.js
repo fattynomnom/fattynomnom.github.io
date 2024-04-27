@@ -1,4 +1,4 @@
-import{d as t,c as n,o,f as s}from"./index-273a13f6.js";const r={class:"markdown-body"},a=s(`<p>As mentioned, I am a huge Typescript fan. So when I accidentally came across <a href="https://www.apollographql.com/docs/apollo-server/workflow/generate-types/">this tutorial</a> to generate typings from my GraphQL schema using Codegen… I just had to. A little sidetracked from my previous goal, but this was easy enough to do.</p><p>So without Codegen, I was doing this:</p><pre><code class="">// src/Schema.ts
+import{d as t,c as n,o,f as s}from"./index-4e9bca00.js";const r={class:"markdown-body"},a=s(`<p>As mentioned, I am a huge Typescript fan. So when I accidentally came across <a href="https://www.apollographql.com/docs/apollo-server/workflow/generate-types/">this tutorial</a> to generate typings from my GraphQL schema using Codegen… I just had to. A little sidetracked from my previous goal, but this was easy enough to do.</p><p>So without Codegen, I was doing this:</p><pre><code class="">// src/Schema.ts
 const Schema = \`#graphql
     type User {
         email: String!
