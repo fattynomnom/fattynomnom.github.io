@@ -1,12 +1,14 @@
 <template>
-    <main class="divide-y py-10 px-5 md:px-28 lg:py-36 h-full lg:overflow-y-auto">
+    <main
+        class="divide-y dark:divide-gray-700 py-10 px-5 md:px-28 lg:py-36 h-full lg:overflow-y-auto"
+    >
         <IntroSection />
         <section>
             <h1>What I'm learning</h1>
             <div
                 v-if="route.meta.isPost"
                 ref="postRefs"
-                class="space-y-5 p-5 md:px-10 md:py-5 rounded-lg bg-gray-50 overflow-hidden"
+                class="space-y-5 p-5 md:px-10 md:py-5 rounded-lg bg-gray-50 dark:bg-gray-900 overflow-hidden"
             >
                 <RouterLink to="/">&lt; Back</RouterLink>
                 <div class="flex items-center justify-between space-x-5">

@@ -3,7 +3,7 @@
         v-for="post in Posts"
         ref="postRefs"
         :key="post.date"
-        class="space-y-5 p-5 md:px-10 md:py-5 rounded-lg bg-gray-50 overflow-hidden cursor-pointer"
+        class="space-y-5 p-5 md:px-10 md:py-5 rounded-lg bg-gray-50 dark:bg-gray-900 overflow-hidden cursor-pointer"
         @click="router.push(`/${post.slug}`)"
     >
         <div class="flex items-center justify-between cursor-pointer space-x-5">

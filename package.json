@@ -14,6 +14,9 @@
         "generate-posts": "node scripts/ExtractFrontmatter.ts"
     },
     "dependencies": {
+        "@heroicons/vue": "^2.2.0",
+        "@vueform/toggle": "^2.1.4",
+        "@vueuse/core": "^12.2.0",
         "vue": "^3.3.4",
         "vue-router": "^4.2.5"
     },
