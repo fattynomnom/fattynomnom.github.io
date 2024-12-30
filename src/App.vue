@@ -1,24 +1,8 @@
 <template>
     <div class="flex flex-col-reverse lg:flex-row h-full overflow-y-auto">
         <div class="flex-1 lg:overflow-y-hidden">
-            <main class="divide-y py-10 px-5 md:px-28 lg:py-36 h-full lg:overflow-y-auto">
-                <IntroSection />
-                <section v-if="route.meta.isPost">
-                    <h1>What I'm learning</h1>
-                    <div
-                        ref="postRefs"
-                        class="space-y-5 p-5 md:px-10 md:py-5 rounded-lg bg-gray-50 overflow-hidden"
-                    >
-                        <RouterLink to="/">&lt; Back</RouterLink>
-                        <div class="flex items-center justify-between space-x-5">
-                            <h2>{{ route.meta.title }}</h2>
-                            <p class="text-sm text-gray-400">{{ route.meta.date }}</p>
-                        </div>
-                        <RouterView />
-                    </div>
-                </section>
-                <RouterView v-else />
-            </main>
+            <PostLayout v-if="route.meta.template === 'PostLayout'" />
+            <RouterView v-else />
         </div>
         <nav
             class="bg-gray-100 p-10 md:px-28 md:py-20 lg:p-20 w-full lg:w-2/6 h-fit lg:h-full flex flex-col justify-center space-y-5 items-center lg:items-start"
@@ -57,16 +41,7 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
 import GithubIcon from '@/assets/icons/github.svg?component'
 import LinkedinIcon from '@/assets/icons/linkedin.svg?component'
 import IntroSection from '@/components/IntroSection.vue'
+import PostLayout from '@/components/PostLayout.vue'
 
 const route = useRoute()
 </script>
-
-<style lang="pcss" scoped>
-section {
-    @apply pb-10 lg:pb-20 space-y-5;
-}
-
-section:not(:first-child) {
-    @apply pt-10 lg:pt-20;
-}
-</style>

@@ -8,12 +8,13 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: () => import('../views/HomeView.vue')
+            meta: { template: 'PostLayout' },
+            component: () => import('../views/PostsListView.vue')
         },
         ...posts.map(({ title, date, slug, fileName }) => ({
             path: `/${slug}`,
             name: slug,
-            meta: { isPost: true, date, title },
+            meta: { template: 'PostLayout', isPost: true, date, title },
             component: () => import(`@/docs/${fileName.replace('.md', '')}.md`)
         }))
     ]
